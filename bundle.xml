@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<adapt_framework>
+    <bundle>
+        <name>adapt_error_log</name>
+        <label>Adapt Error Login</label>
+        <type>logging</type>
+        <description>Logs all errors that have occured with in the Adapt Framework or any other installed bundles</description>
+        <namespace>\adapt\error\log</namespace>
+        <version>1.0.0</version>
+        <depends_on>
+            <bundle>
+                <name>adapt</name>
+                <version>2</version>
+            </bundle>
+        </depends_on>
+    </bundle>
+</adapt_framework>
