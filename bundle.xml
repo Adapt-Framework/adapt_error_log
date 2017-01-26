@@ -3,7 +3,7 @@
     <bundle>
         <name>adapt_error_log</name>
         <label>Adapt Error Login</label>
-        <type>logging</type>
+        <type>extension</type>
         <description>Logs all errors that have occured with in the Adapt Framework or any other installed bundles</description>
         <namespace>\adapt\error\log</namespace>
         <version_status>release</version_status>
