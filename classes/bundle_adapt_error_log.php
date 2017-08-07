@@ -18,7 +18,7 @@ class bundle_adapt_error_log extends \adapt\bundle{
                 function($data){
                     $file_store = new \adapt\storage_file_system();
                     $file_store->suppress_errors = true;
-                    $key = 'error_log/' . date('Y-m-d') . '.log';
+                    $key = 'error.log';
                     $file_path = $file_store->write_to_file($key);
                     if (!$file_path){
                         $file_path = TEMP_PATH . $file_store->get_new_key();
