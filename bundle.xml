@@ -8,7 +8,7 @@
         <namespace>\adapt\error\log</namespace>
         <version_status>release</version_status>
         <availability>public</availability>
-        <version>1.0.1</version>
+        <version>1.0.2</version>
         <copyright>2017 Matt Bruton</copyright>
         <vendor>
             <name>Adapt Framework</name>
