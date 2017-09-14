@@ -23,7 +23,12 @@ class bundle_adapt_error_log extends \adapt\bundle{
                     if (!$file_path){
                         $file_path = TEMP_PATH . $file_store->get_new_key();
                     }
-                    
+
+                    $request = $this->request;
+                    if (isset($request['password'])){
+                        unset($request['password']);
+                    }
+
                     $fp = fopen($file_path, "a");
                     if ($fp){
                         fwrite($fp, "======== " . date('Y-m-d H:i:s') . " ========\n");
