@@ -23,18 +23,22 @@ class bundle_adapt_error_log extends \adapt\bundle{
                     if (!$file_path){
                         $file_path = TEMP_PATH . $file_store->get_new_key();
                     }
-
+                    
                     $request = $this->request;
-                    if (isset($request['password'])){
-                        unset($request['password']);
+                    $keys = array_keys($request);
+                    foreach($keys as $k){
+                        if (stripos($k, 'password')){
+                            unset($request[$k]);
+                        }
                     }
 
                     $fp = fopen($file_path, "a");
+
                     if ($fp){
                         fwrite($fp, "======== " . date('Y-m-d H:i:s') . " ========\n");
                         fwrite($fp, "Class: " . get_class($data['object']) . "\n");
                         fwrite($fp, "Error: " . $data['event_data']['error'] . "\n");
-                        fwrite($fp, "Request: " . print_r($this->request, true) . "\n");
+                        fwrite($fp, "Request: " . print_r($request, true) . "\n");
                         fclose($fp);
                         $file_store->set_by_file($key, $file_path, "text/plain");
                         unlink($file_path);
